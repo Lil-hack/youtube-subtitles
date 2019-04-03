@@ -13,24 +13,14 @@ import io
 import codecs
 import os
 
-if __name__ == '__main__':
 
-
-
-    with open('filename.json', 'r', encoding="utf8") as f:
+def get_subtitles_and_write(namefile_read,namefile_write):
+    with open(namefile_read+'.json', 'r', encoding="utf8") as f:
         data = json.loads(f.read())
-    with open('filename2.json', 'r', encoding="utf8") as f2:
-        data =data+ json.loads(f2.read())
-    with open('filename3.json', 'r', encoding="utf8") as f3:
-        data = data + json.loads(f3.read())
-    with open('filename4.json', 'r', encoding="utf8") as f4:
-        data = data + json.loads(f4.read())
-    with open('filename6.json', 'r', encoding="utf8") as f6:
-        data = data + json.loads(f6.read())
-    with open('filename7.json', 'r', encoding="utf8") as f7:
-        data = data + json.loads(f7.read())
 
-    print(data)
+
+    print(len(data))
+
     data2=[]
     for i in data:
         try:
@@ -53,22 +43,22 @@ if __name__ == '__main__':
 
     data3=[]
     for i in range(0,len(data2)):
-        print (data2[i])
+        # print (data2[i])
         data3.append(data2[i])
         # new_dict = dict(zip(item.key, item.value))
 
-    with io.open('data.json', 'w', encoding='utf8') as json_file:
+    with io.open(namefile_write+'.json', 'w', encoding='utf8') as json_file:
         data3 = json.dumps(data2, ensure_ascii=False)
 
         json_file.write(data3)
 
+if __name__ == '__main__':
 
-    # print(my_list)
-    # my_text=''
-    # symbol='['
-    # for item in my_list:
-    #
-    #     if item.get('text')[0]!=symbol:
-    #         my_text=my_text+' '+item.get('text')
-    #
-    # print (my_text)
+     get_subtitles_and_write('video','DataSet_video_subtitles')
+     get_subtitles_and_write('video2', 'DataSet_video_subtitles2')
+     get_subtitles_and_write('video4', 'DataSet_video_subtitles4')
+     get_subtitles_and_write('video5', 'DataSet_video_subtitles5')
+     get_subtitles_and_write('video3', 'DataSet_video_subtitles3')
+
+
+

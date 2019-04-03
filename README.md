@@ -27,9 +27,13 @@ This will return a list of id_video and other info
 
 ### DataSet
 
-Video_subtitles.json
+DataSet_video_subtitles_part1.json 
 
-In this file there are 1400 objects with the following fields:
+DataSet_video_subtitles_part2.json
+
+DataSet_video_subtitles_part3.json
+
+In this files there are 6200 objects with the following fields:
 
 - id 
 - title

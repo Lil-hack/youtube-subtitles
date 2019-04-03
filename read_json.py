@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     # Cчитываем json в лист
     data = []
-    with open(app_dir+'\\Video_subtitles.json', 'r', encoding="utf8") as f:
+    with open(app_dir+'\\DataSet_video_subtitles_part1.json', 'r', encoding="utf8") as f:
         data = json.loads(f.read())
 
     # Выводим необходимые данные
